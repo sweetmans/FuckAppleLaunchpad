@@ -1,0 +1,117 @@
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+## User settings
+xcuserdata/
+
+## compatibility with Xcode 8 and earlier (ignoring documentation and other minor files)
+*.xcscmblueprint
+*.xccheckout
+
+## compatibility with Xcode 3 and earlier (ignoring binary files)
+*.mode1
+*.mode1v3
+*.mode2
+*.mode2v3
+*.perspective
+*.perspectivev3
+*.pbxuser
+!default.pbxuser
+*.xcworkspace
+!default.xcworkspace
+
+## Xcode Build
+build/
+DerivedData/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Xcode 9+ Playground
+*.xcplayground/
+*.playground/Pages/
+
+# Swift Package Manager
+#
+# Add this line if you want to avoid checking in source code from SPM dependencies.
+# Packages/
+.build/
+xcshareddata/swiftpm/Package.resolved
+
+# CocoaPods
+#
+# We recommend against adding the Pods directory to your .gitignore. However
+# you should judge for yourself, the pros and cons are mentioned at:
+# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
+#
+# Pods/
+#
+# Add this line if you want to avoid checking in source code from the Pod dependencies.
+# Podfile.lock
+
+# Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Carthage/Checkouts
+Carthage/Build/
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo.
+# Instead, use fastlane to re-generate the screenshots whenever necessary.
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Code Injection
+#
+# After new code is injected, Xcode might create new files or modify existing ones
+# that should not be committed.
+# You may want to add these files to your .gitignore
+#
+# *.xcodeproj/*
+# !*.xcodeproj/project.pbxproj
+# !*.xcodeproj/xcshareddata/
+# !*.xcworkspace/contents.xcworkspacedata
+# *.gcno
+
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Archives
+*.zip
+*.tar.gz
+*.tgz
+
+# Other
+*.bak
+*~
+*.swp
+*.lock
+*.log
+*.tmp
+*.out
+*.pid
+*.seed
+*.ncb
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.sublime-*
+*.idea/
+*.iml
+*.vscode/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Documentation and Generated Files
+docs/
+*.generated.swift
