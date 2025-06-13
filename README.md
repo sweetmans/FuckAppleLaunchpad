@@ -27,7 +27,7 @@ This project gives you control back.
 | v1.0.0    | macOS 26.0 Beta Tahoe  | 6.2.0.9.909|
 
 ## App Snapshot
-![App Snapshot](https://github.com/sweetmans/FuckAppleLaunchpad/raw/develop/screenshot.png)
+![App Snapshot](https://github.com/sweetmans/FuckAppleLaunchpad/blob/develop/raw/develop/screenshot.png)
 
 ## Installation Video
 Watch the installation process in action: (#TODO)
