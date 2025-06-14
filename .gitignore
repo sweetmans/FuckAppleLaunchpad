@@ -4,7 +4,9 @@
 
 ## User settings
 xcuserdata/
-
+FuckAppleLaunchpad.xcodeproj/xcshareddata/
+FuckAppleLaunchpad.xcodeproj/xcuserdata/
+*.xcodeproj/xcuserdata/
 ## compatibility with Xcode 8 and earlier (ignoring documentation and other minor files)
 *.xcscmblueprint
 *.xccheckout

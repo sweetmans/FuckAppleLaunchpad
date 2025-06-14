@@ -14,12 +14,10 @@ struct AppGridView: View {
                     ForEach(0..<7) { columnIndex in
                         if rowIndex * 7 + columnIndex < apps.count {
                             AppItemView(app: apps[rowIndex * 7 + columnIndex])
-                                .frame(width: appItemViewWidth,
-                                       height: appItemViewHeight)
+                                .frame(width: appItemViewWidth, height: appItemViewHeight)
                         } else {
                             Color.clear
-                                .frame(width: appItemViewWidth,
-                                       height: appItemViewHeight)
+                                .frame(width: appItemViewWidth, height: appItemViewHeight)
                         }
                     }
                 }
@@ -35,6 +33,11 @@ struct AppGridView: View {
               let screenWidth = NSScreen.main?.visibleFrame.width else {
             return
         }
+        if screenWidth <= 3456.0 / 2 {
+            appGridViewHorizontalPadding = 100.0
+            appGridViewVerticalPadding = 40.0
+        }
+        print("screenHeight", screenHeight, "screenWidth", screenWidth)
         appItemViewWidth = (screenWidth - appGridViewHorizontalPadding * 2 ) / 7.0
         appItemViewHeight = (screenHeight - appGridViewVerticalPadding * 2 ) / 5.0
     }

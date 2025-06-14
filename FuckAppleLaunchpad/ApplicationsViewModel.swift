@@ -14,41 +14,72 @@ struct ApplicationPage: Identifiable {
     let apps: [Application]
 }
 
-class ApplicationsViewModel: ObservableObject {
+class LaunchpadViewViewModel: ObservableObject {
     @Published var applications: [Application] = []
     var applicationPages: [ApplicationPage] {
         stride(from: 0, to: applications.count, by: 35).map { index in
             ApplicationPage(apps: Array(applications[index..<min(index + 35, applications.count)]))
         }
     }
-
+    
     func loadApplications() {
+        let systemApplicationUrl = URL(fileURLWithPath: "/System/Applications")
+        let applicationUrl = URL(fileURLWithPath: "/Applications")
+        var applications = loadApplications(from: systemApplicationUrl, isLoadingDirectory: true)
+        applications.append(contentsOf: loadApplications(from: applicationUrl, isLoadingDirectory: true))
+        if let userApplicationsPath = getUserApplicationsPath() {
+            let userApplicationUrl = URL(fileURLWithPath: userApplicationsPath)
+            applications.append(contentsOf: loadApplications(from: userApplicationUrl, isLoadingDirectory: true))
+        }
+        DispatchQueue.main.async {
+            self.applications = applications.sorted { $0.name < $1.name }
+            print("total apps loaded:", applications.count)
+        }
+    }
+    
+    // TODO: Fix issue on Error accessing User Applications
+    private func getUserApplicationsPath() -> String? {
+        let userHomePath = FileManager.default.homeDirectoryForCurrentUser.path
+        let components = userHomePath.components(separatedBy: "/")
+        if components.count >= 3,
+           components[1] == "Users" {
+            let homePath = "/\(components[1])/\(components[2])/Applications"
+            return homePath
+        } else {
+            return nil
+        }
+    }
+    
+    private func loadApplications(from folderUrl: URL, isLoadingDirectory: Bool) ->  [Application] {
         let fileManager = FileManager.default
-        let applicationsURL = URL(fileURLWithPath: "/Applications")
-        
+        var applications: [Application] = []
         do {
-            let contents = try fileManager.contentsOfDirectory(
-                at: applicationsURL,
-                includingPropertiesForKeys: [.isApplicationKey]
-            )
-            
-            let apps = contents
-                .filter { url in
-                    let resourceValues = try? url.resourceValues(forKeys: [.isApplicationKey])
-                    return resourceValues?.isApplication == true
-                }
-                .map { url in
+            let resourceKeys: [URLResourceKey] = [.isApplicationKey, .isDirectoryKey]
+            guard let enumerator = fileManager.enumerator(at: folderUrl,
+                                                    includingPropertiesForKeys: resourceKeys,
+                                                    options: [.skipsHiddenFiles, .skipsSubdirectoryDescendants],
+                                                    errorHandler: { url, error in
+                print("Error accessing \(url): \(error)")
+                return true
+            }) else {
+                return []
+            }
+            while let url = enumerator.nextObject() as? URL {
+                if url.lastPathComponent.contains("app") {
                     let name = url.deletingPathExtension().lastPathComponent
                     let icon = NSWorkspace.shared.icon(forFile: url.path)
-                    return Application(name: name, path: url, icon: icon)
+                    applications.append(Application(name: name, path: url, icon: icon))
+                    continue
                 }
-                .sorted { $0.name < $1.name }
-            
-            DispatchQueue.main.async {
-                self.applications = apps
+                guard isLoadingDirectory else { continue }
+                let resourceValues = try url.resourceValues(forKeys: Set(resourceKeys))
+                if resourceValues.isDirectory == true {
+                    applications.append(contentsOf: loadApplications(from: url, isLoadingDirectory: false))
+                }
             }
-        } catch {
+        } catch let error {
             print("Error loading applications: \(error)")
         }
+        return applications
     }
 }
