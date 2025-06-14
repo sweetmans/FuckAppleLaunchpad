@@ -1,8 +1,10 @@
 # Fuck Apple Launchpad
 ## A launchpad that `FUCK` Apple has killed Launchpad to force users use Spotlight.
-A tool to bypass and customize Apple's Launchpad functionality on macOS. Tired of Apple's restrictive Launchpad.
+## Leave your star if you want `FUCK` Apple too.
 
-This project gives you control back.
+#### A tool to bypass and customize Apple's Launchpad functionality on macOS. Tired of Apple's restrictive Launchpad.
+
+#### This project gives you control back.
 
 ## Features
 - Launchpad that works like the original one
@@ -54,4 +56,4 @@ MIT License - See LICENSE for details.
 This tool modifies system behavior and may void warranties or violate Apple's terms of service. Use at your own risk.
 
 ## Contact
-For issues or questions, open an issue on GitHub or contact sweetmans@example.com.
+For issues or questions, open an issue on GitHub or contact via X [XSF](https://x.com/spacex_sf).

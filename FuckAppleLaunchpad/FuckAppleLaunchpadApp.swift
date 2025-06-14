@@ -7,7 +7,7 @@ struct FuckAppleLaunchpadApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LaunchpadView()
                 .frame(minWidth: NSScreen.main?.visibleFrame.width ?? 1280, minHeight: NSScreen.main?.visibleFrame.height ?? 800) // Minimum size for readability
         }
         .defaultSize(width: NSScreen.main?.visibleFrame.width ?? 1280, height: NSScreen.main?.visibleFrame.height ?? 800)
