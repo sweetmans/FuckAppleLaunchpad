@@ -8,16 +8,16 @@
 
 ## Features
 - Launchpad that works like the original one
-- Page supported (Will complete in this weekend)
+- Page supported
 - Lightweight and easy to install
 
 ## Latest Release
-- **Version**: v1.0.0
+- **Version**: v1.0.1
 - **Release Date**: June 13, 2025
 - **Download**: [Github Release](https://github.com/sweetmans/FuckAppleLaunchpad/releases/latest)
 
 ## Usage
-- Just open the installed app
+- Download the app and move it into "/Applications" folder. You all set.
 
 ## Requirements
 - macOS 26.0 Tahoe
@@ -27,6 +27,7 @@
 | App Release Version | Required OS Version | Swift Version  |
 |--------------------|--------------------|---------------|
 | v1.0.0    | macOS 26.0 Beta Tahoe  | 6.2.0.9.909|
+| v1.0.1    | macOS 26.0 Beta Tahoe  | 6.2.0.9.909|
 
 ## App Snapshot
 ![App Snapshot](https://github.com/sweetmans/FuckAppleLaunchpad/blob/develop/raw/develop/screenshot.png)
@@ -36,7 +37,7 @@ Watch the installation process in action: (#TODO)
 
 <video controls>
   <source src="https://github.com/sweetmans/FuckAppleLaunchpad/raw/develop/install-video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
+  Your browser does not support video tags.
 </video>
 
 ## Contributing
