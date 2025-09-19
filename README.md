@@ -24,10 +24,10 @@
 - Swift 6.2 or later
 
 ### Version Compatibility
-| App Release Version | Required OS Version   | Swift Version |
-|---------------------|-----------------------|---------------|
-| v1.0.0              | macOS 26.0 Beta Tahoe | 6.2.0.9.909   |
-| v1.0.1              | macOS 26.0 Beta Tahoe | 6.2.0.9.909   |
+| App Release Version | Required OS Version | Swift Version                          |
+|---------------------|---------------------|----------------------------------------|
+| v1.0.0              | macOS 26.0          | swiftlang-6.2.0.19.9 clang-1700.3.19.1 |
+| v1.0.1              | macOS 26.0          | swiftlang-6.2.0.19.9 clang-1700.3.19.1 |
 
 ## App Snapshot
 ![App Snapshot](https://github.com/sweetmans/FuckAppleLaunchpad/blob/develop/raw/develop/screenshot@macbook.png)
