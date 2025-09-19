@@ -1,5 +1,5 @@
 # Fuck Apple Launchpad
-## A launchpad that `FUCK` Apple has killed Launchpad to force users use Spotlight.
+## A launchpad that `FUCK` Apple has killed Launchpad to force users to use Spotlight.
 ## Leave your star if you want `FUCK` Apple too.
 
 #### A tool to bypass and customize Apple's Launchpad functionality on macOS. Tired of Apple's restrictive Launchpad.
@@ -14,7 +14,7 @@
 ## Latest Release
 - **Version**: v1.0.1
 - **Release Date**: June 13, 2025
-- **Download**: [Github Release](https://github.com/sweetmans/FuckAppleLaunchpad/releases/latest)
+- **Download**: [GitHub Release](https://github.com/sweetmans/FuckAppleLaunchpad/releases/latest)
 
 ## Usage
 - Download the app and move it into "/Applications" folder. You all set.
@@ -24,13 +24,13 @@
 - Swift 6.2 or later
 
 ### Version Compatibility
-| App Release Version | Required OS Version | Swift Version  |
-|--------------------|--------------------|---------------|
-| v1.0.0    | macOS 26.0 Beta Tahoe  | 6.2.0.9.909|
-| v1.0.1    | macOS 26.0 Beta Tahoe  | 6.2.0.9.909|
+| App Release Version | Required OS Version | Swift Version                          |
+|---------------------|---------------------|----------------------------------------|
+| v1.0.0              | macOS 26.0          | swiftlang-6.2.0.19.9 clang-1700.3.19.1 |
+| v1.0.1              | macOS 26.0          | swiftlang-6.2.0.19.9 clang-1700.3.19.1 |
 
 ## App Snapshot
-![App Snapshot](https://github.com/sweetmans/FuckAppleLaunchpad/blob/develop/raw/develop/screenshot.png)
+![App Snapshot](https://github.com/sweetmans/FuckAppleLaunchpad/blob/develop/raw/develop/screenshot@macbook.png)
 
 ## Installation Video
 Watch the installation process in action: (#TODO)
@@ -57,4 +57,4 @@ MIT License - See LICENSE for details.
 This tool modifies system behavior and may void warranties or violate Apple's terms of service. Use at your own risk.
 
 ## Contact
-For issues or questions, open an issue on GitHub or contact via X [XSF](https://x.com/spacex_sf).
+For issues or questions, open an issue on GitHub or contact via `X platfrom` [XSF](https://x.com/spacex_sf).
