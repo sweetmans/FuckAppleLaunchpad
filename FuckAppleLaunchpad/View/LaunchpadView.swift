@@ -5,7 +5,7 @@ import Combine
 struct LaunchpadView: View {
     var body: some View {
         ZStack {
-            VisualEffectView(material: .fullScreenUI, blendingMode: .behindWindow)
+            VisualEffectView(material: .contentBackground, blendingMode: .behindWindow)
                 .ignoresSafeArea()
             PageView()
                 .ignoresSafeArea()

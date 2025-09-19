@@ -33,7 +33,7 @@ struct AppGridView: View {
               let screenWidth = NSScreen.main?.visibleFrame.width else {
             return
         }
-        if screenWidth <= 3456.0 / 2 {
+        if screenWidth <= 3456.0 / 2.0 {
             appGridViewHorizontalPadding = 100.0
             appGridViewVerticalPadding = 40.0
         }

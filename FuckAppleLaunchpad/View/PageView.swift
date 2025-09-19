@@ -27,7 +27,7 @@ struct PageView: View {
                     ForEach(viewModel.applicationPages.indices, id: \.self) { index in
                         Circle()
                             .fill(index == currentPage ? Color.white : Color(red: 61/255, green: 64/255, blue: 72/255))
-                            .frame(width: 8, height: 8)
+                            .frame(width: 9, height: 9)
                     }
                 }
             }

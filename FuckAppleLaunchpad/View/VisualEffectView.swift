@@ -8,6 +8,7 @@ struct VisualEffectView: NSViewRepresentable {
         let view = NSVisualEffectView()
         view.material = material
         view.blendingMode = blendingMode
+        view.appearance = NSAppearance(named: .vibrantDark)
         view.state = .active
         return view
     }
