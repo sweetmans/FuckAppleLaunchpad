@@ -1,44 +1,46 @@
 import SwiftUI
 
 struct AppGridView: View {
-    let apps: [Application]
-    @State private var appItemViewHeight: CGFloat = 0
-    @State private var appItemViewWidth: CGFloat = 0
-    @State private var appGridViewVerticalPadding: CGFloat = 120.0
-    @State private var appGridViewHorizontalPadding: CGFloat = 420.0
+    let items: [LaunchpadItem]
+    let onGroupTap: (Group) -> Void
+    let onAppTap: (Application) -> Void
+    @State private var itemWidth: CGFloat = 0
+    @State private var itemHeight: CGFloat = 0
+    @State private var verticalPadding: CGFloat = 120.0
+    @State private var horizontalPadding: CGFloat = 420.0
     
     var body: some View {
         Grid(horizontalSpacing: 2, verticalSpacing: 2) {
             ForEach(0..<5) { rowIndex in
                 GridRow {
                     ForEach(0..<7) { columnIndex in
-                        if rowIndex * 7 + columnIndex < apps.count {
-                            AppItemView(app: apps[rowIndex * 7 + columnIndex])
-                                .frame(width: appItemViewWidth, height: appItemViewHeight)
+                        let index = rowIndex * 7 + columnIndex
+                        if index < items.count {
+                            LaunchpadItemView(item: items[index], onGroupTap: onGroupTap, onAppTap: onAppTap)
+                                .frame(width: itemWidth, height: itemHeight)
                         } else {
                             Color.clear
-                                .frame(width: appItemViewWidth, height: appItemViewHeight)
+                                .frame(width: itemWidth, height: itemHeight)
                         }
                     }
                 }
             }
         }
-        .onAppear(perform: {
-            updateAppItemViewSize()
-        })
+        .onAppear {
+            updateItemSize()
+        }
     }
     
-    func updateAppItemViewSize() {
+    func updateItemSize() {
         guard let screenHeight = NSScreen.main?.visibleFrame.height,
               let screenWidth = NSScreen.main?.visibleFrame.width else {
             return
         }
         if screenWidth <= 3456.0 / 2.0 {
-            appGridViewHorizontalPadding = 100.0
-            appGridViewVerticalPadding = 40.0
+            horizontalPadding = 100.0
+            verticalPadding = 40.0
         }
-        print("screenHeight", screenHeight, "screenWidth", screenWidth)
-        appItemViewWidth = (screenWidth - appGridViewHorizontalPadding * 2 ) / 7.0
-        appItemViewHeight = (screenHeight - appGridViewVerticalPadding * 2 ) / 5.0
+        itemWidth = (screenWidth - horizontalPadding * 2) / 7.0
+        itemHeight = (screenHeight - verticalPadding * 2) / 5.0
     }
 }

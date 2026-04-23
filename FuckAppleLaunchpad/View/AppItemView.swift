@@ -3,6 +3,7 @@ import AppKit
 
 struct AppItemView: View {
     let app: Application
+    var onTap: ((Application) -> Void)? = nil
 
     var body: some View {
         VStack(spacing: 12) {
@@ -29,6 +30,7 @@ struct AppItemView: View {
         }
         .contentShape(Rectangle())
         .onTapGesture {
+            onTap?(app)
             NSWorkspace.shared.open(app.path)
             NSApplication.shared.terminate(nil)
         }

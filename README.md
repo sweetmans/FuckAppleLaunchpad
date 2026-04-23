@@ -20,7 +20,7 @@
 - Download the app and move it into "/Applications" folder. You all set.
 
 ## Requirements
-- macOS 26.0 Tahoe
+- macOS 16.0 or later
 - Swift 6.2 or later
 
 ### Version Compatibility
@@ -28,6 +28,7 @@
 |---------------------|---------------------|----------------------------------------|
 | v1.0.0              | macOS 26.0          | swiftlang-6.2.0.19.9 clang-1700.3.19.1 |
 | v1.0.1              | macOS 26.0          | swiftlang-6.2.0.19.9 clang-1700.3.19.1 |
+| v1.1.0+             | macOS 16.0+         | swiftlang-6.2.0.19.9 clang-1700.3.19.1 |
 
 ## App Snapshot
 ![App Snapshot](https://github.com/sweetmans/FuckAppleLaunchpad/blob/develop/raw/develop/screenshot@macbook.png)
